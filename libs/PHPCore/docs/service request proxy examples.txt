@@ -1,0 +1,90 @@
+Service Request Proxy
+
+This application acts as a middleman between the services that
+the user intends to call and the user invoking this proxy.
+
+The proxy accepts only HTTP POST requests. Within the post data
+you must specify the HTTP Verb, Service URL, and Arguments to be
+sent along to the service URL.
+
+expecting:
+verb         - GET, POST, PUT, or DELETE (OPTIONS|TRACE)
+url          - URL of service to make request
+args         - Args or payload (request body) can be:
+                array ( PAYLOAD => '', FORMAT => 'binary,text,base64,json' )
+                array ( token => xxxxxx, acctid => 4 )  -> becomes JSON
+                base64_encoded string
+
+case GET
+ - Send Request to Service URL with Args appended
+
+case POST
+ - Send request to Service URL with Args as postfields
+
+case PUT
+ - Send request to Service URL with Args as payload (request body)
+ - check Args array for PAYLOAD argument -- use PAYLOAD as request body
+ - require FORMAT argument along with PAYLOAD to determine the format of the content
+     supports: binary, text, base64, json
+ - If no PAYLOAD argument, assume base64encoded string, send Args as request body.
+
+case DELETE
+ - Send request to service URL with Args as postfields
+
+$_POST = array (
+                    'verb' => 'GET',
+                    'url'  => 'https://alsutilities.demo.clemson.edu/services/XY/get-user.php',
+                    'args' => array( 'id' => 124433 )
+               )
+
+$_POST = array (
+                    'verb' => 'POST',
+                    'url'  => 'https://alsutilities.demo.clemson.edu/services/XY/add-user.php',
+                    'args' => array( 'name' => 'Test User', 'email' => 'test@user.com' )
+               )
+
+$_POST = array (
+                    'verb' => 'PUT',
+                    'url'  => 'https://alsutilities.demo.clemson.edu/services/XY/update-user.php',
+                    'args' => array( 'email' => 'test-2@user.com' )
+               )
+
+$_POST = array (
+                     'verb' => 'PUT',
+                     'url'  => 'https://alsutilities.demo.clemson.edu/services/XY/update-text.php',
+                     'args' => array ( 'PAYLOAD' => '1010101010001010001010101010'
+                                       'FORMAT'  => 'binary' )
+                )
+
+$_POST = array (
+                     'verb' => 'PUT',
+                     'url'  => 'https://alsutilities.demo.clemson.edu/services/XY/update-text.php',
+                     'args' => array ( 'PAYLOAD' =>  'dGVzdGluZyBiYXNlNjQgZW5jb2RpbmcuDQpQVVQgUkVTVCBzZXJ2aWNlcyBjYWxsLg=='
+                                       'FORMAT'  => 'base64' )
+                )
+
+$_POST = array (
+                     'verb' => 'PUT',
+                     'url'  => 'https://alsutilities.demo.clemson.edu/services/XY/update-text.php',
+                     'args' => array ( 'PAYLOAD' => 'Testing 1, 2, 3'
+                                       'FORMAT'  => 'text' )
+                )
+
+$_POST = array (
+                     'verb' => 'PUT',
+                     'url'  => 'https://alsutilities.demo.clemson.edu/services/XY/update-text.php',
+                     'args' => array ( 'PAYLOAD' => '{"test":1,"user":"Mike"}'
+                                       'FORMAT'  => 'json' )
+                )
+
+$_POST = array (
+                     'verb' => 'PUT',
+                     'url'  => 'https://alsutilities.demo.clemson.edu/services/XY/upload-file.php',
+                     'args' => dGVzdGluZyBiYXNlNjQgZW5jb2RpbmcuDQpQVVQgUkVTVCBzZXJ2aWNlcyBjYWxsLg==
+                )
+
+$_POST = array (
+                    'verb' => 'DELETE',
+                    'url'  => 'https://alsutilities.demo.clemson.edu/services/XY/users.php',
+                    'args' => json_encode( array( 'id' => 124433 ) )
+               )

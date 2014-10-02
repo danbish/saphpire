@@ -1,0 +1,24 @@
+<div style="padding: 10px;">
+	<form method="POST" action="./DevConsole.php#logs">
+	   <div style="float:left; padding-right: 10px; padding-top: 1px;">
+            Please select a file to view:
+		    <select name="logFile">
+		        _:_OPTIONS_:_
+		    </select>
+		    <input name="submit"  type="submit" value="Load Log" />
+		    
+		    <input name="clearLog" type="submit" value="Clear File" />
+	    </div>
+	    <div style="float: right;">
+	       Clear entries older than:
+		    <input name="number:int" type="text" style="margin-top: 2px; height: 14px; width: 25px;"/>
+		    <select name="length">
+		       <option value="1" >Days</option>
+		       <option value="7" >Weeks</option>
+		       <option value="30" >Months</option>
+		       <option value="365" >Years</option>
+		    </select>
+		    <input name="clearLogBefore" type="submit" value="Clear" />
+		</div>
+	</form>
+</div>

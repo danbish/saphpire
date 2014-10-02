@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app>
+    <application-name>Application</application-name>
+    <release-date>0000-00-00 00:00:00</release-date>
+    <maintenance-window>
+        <start>0000-00-00 00:00:00</start>
+        <end>0000-00-00 00:00:00</end>
+    </maintenance-window>
+</app>

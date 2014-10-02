@@ -1,0 +1,27 @@
+# follow symlinks and deny directory access
+Options +FollowSymLinks -Indexes
+
+# deny all xml files
+<Files ~ "^.*\.([Xx][Mm][Ll])">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</Files>
+
+# disable the server signature
+ServerSignature Off
+
+# set the default character set
+AddDefaultCharset utf-8
+
+# allow URL rewriting
+RewriteEngine On
+
+# allow us to drop .php from file names
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+# allow redirects to core controllers
+RewriteRule DevConsole libs/PHPCore/DevConsole.php [NC,L]
+RewriteRule Error libs/PHPCore/Error.php [NC,L]

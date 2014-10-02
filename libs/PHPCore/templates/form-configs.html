@@ -1,0 +1,163 @@
+<div style="padding: 10px;">
+	<form method="POST" action="./DevConsole.php#configs">
+	   <div style="padding-right: 10px; padding-top: 1px;">
+            Please select a file to view:
+		    <select name="configFile">
+		        _:_OPTIONS_:_
+		    </select>
+		    <input name="submitConfig"  type="submit" value="Load Config" />
+            <input name="saveConfig" type="submit" value="Save Changes" />
+            _:_CONFIG-CONTENTS_:_
+	    </div>
+        <div>
+            <h1>Application Configuration</h1>
+            <table style="margin-left: 20px;">
+                <tbody>
+                    <tr>
+                        <td style="border: none;">
+                            <label for="app[application-name]">Application Name</label>
+                        </td>
+                        <td style="border: none;">
+                            <input type="text" name="app[application-name]" id="app[application-name]" value="_:_app[application-name]_:_"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: none;">
+                            <label for="app[release-date]">Release Date</label>
+                        </td>
+                        <td style="border: none;">
+                            <input type="text" name="app[release-date]" id="app[release-date]" value="_:_app[release-date]_:_"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: none;">
+                            <label for="app[maintenance-window[start]]">Maintenance Window</label>
+                        </td>
+                        <td style="border: none;">
+                            <input type="text" name="app[maintenance-window[start]]" id="app[maintenance-window[start]]" value="_:_app[maintenance-window[start]]_:_"/>
+                             to
+                            <input type="text" name="app[maintenance-window[end]]" id="app[maintenance-window[end]]" value="_:_app[maintenance-window[end]]_:_"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 style="margin-left: 20px;">Add New Attribute</h2>
+            <select name="new_attr" id="new_attr">
+                <option value="string">String</option>
+                <option value="integer">Integer</option>
+                <option value="date">Date</option>
+                <option value="date_time">DateTime</option>
+                <option value="date_range">Date Range</option>
+                <option value="array">Array</option>
+            </select>
+            <h2 style="margin-left: 20px;">Extensions Loaded</h2>
+            _:_EXTENSIONS_:_
+        </div>
+        <div>
+            <h1>Contacts</h1>
+            <table style="margin-left: 20px;">
+                <tbody>
+                    <tr>
+                        <td style="border: none;">Name</td>
+                        <td style="border: none;">Username</td>
+                        <td style="border: none;">Email</td>
+                        <td style="border: none;">Role</td>
+                    </tr>
+                    <tr>
+                        <td style="border: none;">
+                            <input type="text" name="contacts[name]" id="contacts[name]"/>
+                        </td>
+                        <td style="border: none;">
+                            <input type="text" name="contacts[username]" id="contacts[username]"/>
+                        </td>
+                        <td style="border: none;">
+                            <input type="text" name="contacts[email]" id="contacts[email]"/>
+                        </td>
+                        <td style="border: none;">
+                            <input type="text" name="contacts[role]" id="contacts[role]"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h1>Database Connections</h1>
+
+            <table style="margin-left: 20px;">
+                <tbody>
+                    <tr>
+                        <td style="border: none;">
+                            <label for="db[sAdapter]">Adapter</label>
+                        </td>
+                        <td style="border: none;">
+                            <select name="db[sAdapter]" id="db[sAdapter]">
+                                <option value="null">-- Select an adapter --</option>
+                                <option value="Oracle">Oracle</option>
+                                <option value="MySQL">MySQL</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: none;">
+                            <label for="db[sHost]">Host</label>
+                        </td>
+                        <td style="border: none;">
+                            <input type="text" name="db[sHost]" id="db[sHost]"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: none;">
+                            <label for="db[sUsername]">Username</label>
+                        </td>
+                        <td style="border: none;">
+                            <input type="text" name="db[sUsername]" id="db[sUsername]"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: none;">
+                            <label for="db[sPassword]">Password</label>
+                        </td>
+                        <td style="border: none;">
+                            <input type="text" name="db[sPassword]" id="db[sPassword]"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: none;">
+                            <label for="db[sDbName]">Database Name</label>
+                        </td>
+                        <td style="border: none;">
+                            <input type="text" name="db[sDbName]" id="db[sDbName]"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: none;">
+                            <label for="db[sServiceName]">Service Name</label>
+                        </td>
+                        <td style="border: none;">
+                            <input type="text" name="db[sServiceName]" id="db[sServiceName]"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h1>Hosts</h1>
+            <table style="margin-left: 20px;">
+                <tbody>
+                    <tr>
+                        <td style="border: none;">Environment</td>
+                        <td style="border: none;">Label</td>
+                    </tr>
+                    <tr>
+                        <td style="border: none;">
+                            <input type="text" name="hosts[environment]" id="hosts[environment]"/>
+                        </td>
+                        <td style="border: none;">
+                            <input type="text" name="hosts[name]" id="hosts[name]"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</form>
+</div>

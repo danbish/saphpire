@@ -1,0 +1,1 @@
+Put ping.php in the base of your service's folders. 

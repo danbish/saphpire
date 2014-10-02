@@ -1,0 +1,10 @@
+	<exception>
+		<user>_:_USER_:_</user>
+        <user-IP>_:_USER-IP_:_</user-IP>
+		<date>_:_DATE_:_</date>
+		<microseconds>_:_MICROSECONDS_:_</microseconds>
+		<codes-and-messages>
+_:_CODES-AND-MESSAGES_:_
+		</codes-and-messages>
+_:_TRACE-NODES_:_
+	</exception>

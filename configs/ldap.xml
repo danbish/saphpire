@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <dev>
+        <ldap>
+            <url>ldaps://abc.xyz.com</url>
+            <dn>ou=users,ou=people,o=cuid</dn>
+            <port>636</port>
+            <bindrdn>cn=authonly,ou=proxy,o=cuid</bindrdn>
+            <password>zasdufhajweiuo!</password>
+        </ldap>
+    </dev>
+    <demo>
+        <ldap>
+            <url>ldaps://abc.xyz.com</url>
+            <dn>ou=users,ou=people,o=cuid</dn>
+            <port>636</port>
+            <bindrdn>cn=authonly,ou=proxy,o=cuid</bindrdn>
+            <password>zasdufhajweiuo!</password>
+        </ldap>
+    </demo>
+    <qa>
+        <ldap>
+            <url>ldaps://abc.xyz.com</url>
+            <dn>ou=users,ou=people,o=cuid</dn>
+            <port>636</port>
+            <bindrdn>cn=authonly,ou=proxy,o=cuid</bindrdn>
+            <password>zasdufhajweiuo!</password>
+        </ldap>
+    </qa>
+    <app>
+        <ldap>
+            <url>ldaps://abc.xyz.com</url>
+            <dn>ou=users,ou=people,o=cuid</dn>
+            <port>636</port>
+            <bindrdn>cn=authonly,ou=proxy,o=cuid</bindrdn>
+            <password>zasdufhajweiuo!</password>
+        </ldap>
+    </app>
+</config>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<ruleset name="PHPCore">
+    <!-- Description for this ruleset. -->
+    <description>Coding standards for applications using the PHPCore architecture.</description>
+
+    <!-- Paths to ignore when testing standards. -->
+    <exclude-pattern>*/css/*</exclude-pattern>
+    <exclude-pattern>*/docs/*</exclude-pattern>
+    <exclude-pattern>*/files/*</exclude-pattern>
+    <exclude-pattern>*/img/*</exclude-pattern>
+    <exclude-pattern>*/js/*</exclude-pattern>
+    <exclude-pattern>*/logs/*</exclude-pattern>
+    <exclude-pattern>*/media/*</exclude-pattern>
+    <exclude-pattern>*/templates/*</exclude-pattern>
+
+    <!-- Rule to minimize length of lines. -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="100"/>
+            <property name="absoluteLineLimit" value="120"/>
+        </properties>
+    </rule>
+
+    <!-- Define messages for the line length rules. -->
+    <rule ref="Generic.Files.LineLength.MaxExceeded">
+        <message>Max line length limit of %s chars exceeded. Characters: %s.</message>
+    </rule>
+    <rule ref="Generic.Files.LineLength.TooLong">
+        <message>Line length limit of %s chars exceeded. Characters: %s.</message>
+    </rule>
+
+    <!--
+        There is a special internal error message produced by PHP_CodeSniffer
+        when it is unable to detect code in a file, possible due to
+        the use of short open tags even though php.ini disables them.
+        You can disable this message in the same way as sniff messages.
+
+        Again, the code here will be displayed in the PHP_CodeSniffer
+        output when using the -s command line argument while checking a file.
+    -->
+    <rule ref="Internal.NoCodeFound">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Include our rules. -->
+    <rule ref="./Sniffs/"/>
+</ruleset>

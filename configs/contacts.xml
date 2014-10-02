@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts>
+	<contact>
+		<name>Old McDonald</name>
+		<username>eieio</username>
+		<email>eieio@mcfarm.edu</email>
+		<role>dev</role>
+	</contact>
+	<contact>
+		<name>Headed Up</name>
+		<username>BalloonGuy</username>
+		<email>up@pixilar.com</email>
+		<role>dev</role>
+	</contact>
+	<contact>
+		<name>Da Wolfman</name>
+		<username>HarryArms</username>
+		<email>bite4fun@dawolfman.com</email>
+		<role>dev</role>
+	</contact>
+</contacts>

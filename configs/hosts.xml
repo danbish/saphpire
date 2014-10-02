@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hosts>
+    <host>
+        <name>localhost</name>
+        <env>dev</env>
+    </host>
+</hosts>
